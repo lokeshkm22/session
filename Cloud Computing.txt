@@ -1,0 +1,66 @@
+Key Terms:
+
+	- Server,network,security,storage,infrastructure
+	- Onpremesis-own Data center
+	- Cloud premesis - cloud provider will provide DC
+
+Cloud computing is a product - since 2006
+
+What is cloud computing?
+ - is a  delivery of computing resources - servers, storage, network etc. over internet and can be accessed from anywhere, anytime.
+
+Coud Computing Basic idea:
+
+Electricity - A Utility Model:
+
+Electricity is made available to you with much greater efficiency that you could generate on your own.
+
+
+It's a servers which means ditributed among worldwide
+
+R- Remote servers
+I- Internet	to access that servers we need internet
+R- Rental	pay for what we use
+
+
+1.Service provider-AWS,google cloud platform,Azure, oracle,dell, IBM, Alibaba cloud
+2.Service consumer-
+
+
+Why cloud computing?
+
+ - reduce the Cost of Ownership (CoW) associated with their IT infrastructure.
+
+
+We are going to see AWS:
+
+2006- they introduced in northen virginia
+
+From 2016 it's started booming in india-- there is some revelution happened in internet
+
+
+PAYG - Pay as you go
+
+
+ONPREMESIS:
+
+1.Server Engineering
+2.Storage Engineering
+3.Application Engineering
+4.DataBase Engineering
+5.Network Engineering
+6.Security Engineering
+
+Cloud premesis:(Cloud Service model)
+
+IAAS- Server engineering, Storage, Network engineering
+PAAS- Database Engineering. Security engineering
+SAAS- Application Engineering
+
+
+Cloud deployment model:
+
+1.Public cloud --Anyone can access, if you have the internet access AWS, Azure, GCP
+2.Private cloud---Particular organization can use the infrastructure, more secured
+3.Community cloud---multiple organization share the same infastructure like common repository
+4.Hybrid cloud ---Public + private cloud---sensitive inforamtion will be in public ,non sesn will be in public

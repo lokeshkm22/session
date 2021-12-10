@@ -1,0 +1,81 @@
+
+https://github.com/Karthikgovind7/my-repo.git/
+
+
+git config --global user.name "reenajuliyet"
+git config --global user.email "reenajuliyet@gmail.com"
+git config --global core.editor vim
+git config --global core.compression 2
+git config --global diff.tool vimdiff
+
+
+
+Configuration needed for Merge the file between diff branches:
+
+git config --global merge.tool vimdiff
+git config --global merge.conflictstyle diff3
+git config --global mergetool.prompt false
+
+git merge dev #Merge Conflict will be seen.
+
+git mergetool #Use Mergetool command to resolve the issue as per the user need.
+
+
+Three scenarios to checking Merge & Rebase:
+
+1. Merge : Adding both the changes, from both the branches.
+
+Removing the extra lines and altering the file. Then Save/Commit it.
+
+
+
+
+2. Merge : Picking any one change from Master/ Branch.
+
+++ Issue merge command from Master Branch.
+==========================================================================
+[root@ip-172-31-19-168 merge]# git merge dev
+Auto-merging merge
+CONFLICT (content): Merge conflict in merge
+Automatic merge failed; fix conflicts and then commit the result.
+[root@ip-172-31-19-168 merge]# git mergetool
+==========================================================================
+
+:diffg RE  " get from REMOTE
+:diffg BA  " get from BASE
+:diffg LO  " get from LOCAL
+
+Once choosing the change, issue :wqa => save & quit all.
+
+
+
+
+
+3. Rebase: Rebasing the change in Branch and merging it to the Master.
+
+Scenario Test:
+1. Create a folder
+2. Create a file with content - Commit it
+3. Create a new branch
+4. Checkout to the Feature branch, create an another file in it. - Commit it
+5. Checkout to the master branch, do some changes in the file present. - Commit it
+6. Checkout to the Feature branch, add few more content to the new file. - Commit it
+7. Now do rebase from the Feature branch to the master. "git rebase <MasterBranch>"
+8. Then Merge it to the Master "git merge <featurebranch>"
+9. Validate the Rebase.
+
+
+
+
+4. Cherry-Pick: used to copy the commit from one branch to other branch.
+
+git cherry-pick <commitID>
+
+
+
+
+GIT PULL vs FETCH:
+
+When you use pull, Git tries to automatically do your work for you. It is context sensitive, so Git will merge any pulled commits into the branch you are currently working in.  pull automatically merges the commits without letting you review them first. If you don’t closely manage your branches, you may run into frequent conflicts.
+
+When you fetch, Git gathers any commits from the target branch that do not exist in your current branch and stores them in your local repository. However, it does not merge them with your current branch. This is particularly useful if you need to keep your repository up to date, but are working on something that might break if you update your files. To integrate the commits into your master branch, you use merge.

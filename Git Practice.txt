@@ -1,0 +1,368 @@
+1.Git Status Vs Git log
+
+git status
+
+The git status command displays the state of the working directory and the staging area.
+It lets you see which changes have been staged, which haven’t, and which files aren’t being tracked by Git. 
+Status output does not show you any information regarding the committed project history. 
+For this, you need to use git log.
+
+git log 
+
+The git log command displays committed snapshots. It lets you list the project history, filter it, and search for specific changes.
+
+2.Branching:Start a New Feature
+
+They provide a context that keeps your work and your changes separate from any other context.
+
+git branch <new-branch-name>
+
+3.Switch Contexts
+
+To start working on a different context, you need to tell Git that you want to switch to it.
+You do this by “checking out” the branch with
+the “git checkout” command.
+
+git checkout <new-branch-name>
+
+4.Integrate Changes
+
+When your new feature is ready, you might want to integrate it into another branch (e.g.your production or testing branch).
+
+First, switch to the branch that is supposed to receive these changes. Then, call the “git merge” command with the name of the
+branch you want to integrate.
+
+git merge <branch-to-integrate>
+
+
+
+=====================================
+
+
+
+5.Git fetch vs Git pull
+
+git fetch is the command that tells your local git to retrieve the latest meta-data info from the original (yet doesn’t do any file transferring.
+It’s more like just checking to see if there are any changes available).
+
+git pull on the other hand does that AND brings (copy) those changes from the remote repository.
+
+6.Upload Local Changes to the Remote Server
+
+To upload the local changes you made in your current HEAD branch, all you have to do is call “git push”.
+
+$ git push
+
+
+
+====================================================
+curl -u 'USER' https://api.github.com/user/repos -d '{"name":"REPO"}'
+# Remember replace USER with your username and REPO with your repository/application name!
+git remote add origin git@github.com:USER/REPO.git
+git push origin maste
+
+==================================================================
+Task: How to create github repo using CLI:
+
+1.Generate the token in git hub-->setting--->Developer setting -->Personal access token
+	Token: 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
+
+2.curl -H 'Authorization: token MY_ACCESS_TOKEN' https://api.github.com/user/repos  -d '{"name":"REPO"}'
+
+	Admin@DESKTOP-I71M5RM MINGW64 ~/merge-conflict (master)
+	$ curl -H 'Authorization: token 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' https://api.github.com/user/repos  -d '{"name":"REPO"}'
+
+
+git remote add origin git@github.com:lokeshkm22/REPO
+
+
+curl -H 'Authorization: token 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' https://api.github.com/user/repos  -d '{"name":"DcokerRepo"}'---create remote repo through CLI
+git remote add docker https://github.com/lokeshkm22/DcokerRepo---add remote repo
+git push -u docker master---push from local repo
+===========================================================================
+
+history
+    1  git config --global user.name "lokesh"
+    2  git config --global user.email "lokeshkm2212@gmail.com"
+    3  git status
+    4  git init
+    5  git config --global user.name "lokesh"
+    6  git config --global user.email "lokeshkm2212@gmail.com"
+    7  git status
+    8  git --version
+    9  mkdir git
+   10  ls
+   11  ls -ltra
+   12  cd git
+   13  ls -ltra
+   14  git init
+   15  ls -ltra
+   16  pwd
+   17  vi test
+   18  cat test
+   19  git status
+   20  git status -s
+   21  git add test
+   22  git status
+   23  git status -s
+   24  git config --global user.name "lokesh"
+   25  git config --global user.email "lokeshkm2212@gmail.com"
+   26  git config --global core.editor vim
+   27  git config --global core.compression 2
+   28  git config --global diff.tool vimdiff
+   29  git commit -m "My First commit"
+   30  git status
+   31  git log --online
+   32  git status -s
+   33  git log
+   34  vi test
+   35  git status -s
+   36  git status
+   37  git add test
+   38  git status
+   39  git status -s
+   40  git commit -m "My second commit"
+   41  git log
+   42  git log --online
+   43  git log --oneline
+   44  git checkout test
+   45  git status -s
+   46  git checkout --test
+   47  git show
+   48  git restore
+   49  git restore test
+   50  git status
+   51  git log --online
+   52  git log --oneline
+   53  git show 5aa4c36
+   54  git show a90c77f
+   55  git reset --soft a90c77f
+   56  git status
+   57  git remote add origin git@github.com:lokeshkm22/new_repo2605
+   58  git remote add origin git@github.com:lokeshkm22/new_repo2605.git
+   59  curl -u 'lokeshkm22' https://api.github.com/user/repos -d '{"name":"new_repo12605"}'
+   60  cd git
+   61  lds
+   62  ls
+   63  git remote add origin https://github.com/lokeshkm22/myrepo2605.git
+   64  git remote add lokesh https://github.com/lokeshkm22/myrepo2605.git
+   65  git remote
+   66  git push -u lokesh master
+   67  cd git
+   68  git push lokesh master
+   69  history
+ 70  cd git
+   71   git push -u lokesh master
+   72  git fetch
+   73  git fetch test
+   74  git pull
+   75  git fetch
+   76  git status
+   77  git log
+   78  git branch
+   79  git branch dev
+   80  git branch
+   81  git checkout dev
+   82  git branch
+   83  git log --oneline
+   84  vi test
+   85  git status
+   86  git add test
+   87  git status
+   88  git commit -m "Third commit from Dev branch"
+   89  git log
+   90  git checkout master
+   91  git log
+   92  git checkout dev
+   93  git branch
+   94  git checkout master
+   95  git merge dev
+   96  git log --online
+   97  git log --oneline
+   98  git status
+   99  git push -u lokesh master
+  100  git branch
+  101  git branch prod
+  102  git branch
+  103  git checkout prod
+  104  git branch
+  105  git log
+  106  vi test
+  107  git add test
+  108  git status
+  109  git  commit -m "Fourth prod brannch commit"
+  110  git log
+  111  git status
+  112  git branch
+  113  git checkout master
+  114  git branch
+  115  git merge prod
+  116  git log
+  117  history
+  118  git push -u lokesh master
+  119  git log --oneline
+  120  history
+
+=======================================
+
+Branching Strategy:
+
+
+Merge Conflict tools:
+
+git config --global merge.tool vimdiff
+git config --global merge.conflictstyle diff3
+git config --global mergetool.prompt false
+
+how to fix:
+
+git mergetool
+
+
+===========================
+
+
+
+
+
+ctrl+w ---to rotate the curser in editor
+press ESC key for 10 time --->to reset the action
+shift :diffg RE --->we need to give which file needs to commit here my remote location file will be correct one
+:wqa---quit and add
+
+========================================
+
+GIT Rebase:
+
+--rebase can only do in feature branch, merge can only do in master branch
+--rebase is used to swap the branch
+
+
+Admin@DESKTOP-I71M5RM MINGW64 ~/rebase (dev)
+$ git rebase master
+Successfully rebased and updated refs/heads/dev.
+
+Admin@DESKTOP-I71M5RM MINGW64 ~/rebase (dev)
+$ git log --oneline
+093eae1 (HEAD -> dev) Fourth commit
+62568c3 (master) Third commit
+7f5b13f Second commit
+b7828fe First commit
+
+Admin@DESKTOP-I71M5RM MINGW64 ~/rebase (dev)
+$ git checkout master
+Switched to branch 'master'
+
+Admin@DESKTOP-I71M5RM MINGW64 ~/rebase (master)
+$ git branch
+  dev
+* master
+
+Admin@DESKTOP-I71M5RM MINGW64 ~/rebase (master)
+$ git log --oneline
+62568c3 (HEAD -> master) Third commit
+7f5b13f Second commit
+b7828fe First commit
+
+Admin@DESKTOP-I71M5RM MINGW64 ~/rebase (master)
+$ git merge dev
+Updating 62568c3..093eae1
+Fast-forward
+ test1 | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test1
+
+Admin@DESKTOP-I71M5RM MINGW64 ~/rebase (master)
+$ git log --oneline
+093eae1 (HEAD -> master, dev) Fourth commit
+62568c3 Third commit
+7f5b13f Second commit
+b7828fe First commit
+=============================================
+Admin@DESKTOP-I71M5RM MINGW64 ~/rebase (master)
+$ git remote add origin https://github.com/lokeshkm22/myrebase.git
+
+Admin@DESKTOP-I71M5RM MINGW64 ~/rebase (master)
+$ git remote
+origin
+
+Admin@DESKTOP-I71M5RM MINGW64 ~/rebase (master)
+$ git branch
+  dev
+* master
+
+Admin@DESKTOP-I71M5RM MINGW64 ~/rebase (master)
+$ git push -u origin master
+Enumerating objects: 12, done.
+Counting objects: 100% (12/12), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (12/12), 907 bytes | 302.00 KiB/s, done.
+Total 12 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/lokeshkm22/myrebase.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+Admin@DESKTOP-I71M5RM MINGW64 ~/rebase (master)
+$
+======================================
+Git Fork:
+
+Dev1 dev 2--->dev 1 give file to dev2 to further on the dev1 code
+
+Task: what is git tagging?
+
+
+The difference between tags and branches are that a branch always points to the top of a development line and will change when a new commit is pushed whereas a tag will not change. Thus tags are more useful to "tag" a specific version and the tag will then always stay on that version and usually not be changed.
+
+In practice, tags are used to designate the software versioning, and are named with numbers (ex: v1.0.2).
+============================================
+
+Cherry Pick:
+
+--to get incorrect commit and merge it with correct one
+--we can do from base eg: if we have c1,c2,c3 we can't directly do cherry-pick in c3 if the incorrect commit in c2
+
+
+
+Admin@DESKTOP-I71M5RM MINGW64 ~/cherry-pick (dev)
+$ git branch
+* dev
+  master
+
+Admin@DESKTOP-I71M5RM MINGW64 ~/cherry-pick (dev)
+$ vi test
+
+Admin@DESKTOP-I71M5RM MINGW64 ~/cherry-pick (dev)
+$ vi test
+
+Admin@DESKTOP-I71M5RM MINGW64 ~/cherry-pick (dev)
+$ git commit -am "Second commit"
+warning: LF will be replaced by CRLF in test.
+The file will have its original line endings in your working directory
+[dev 7803608] Second commit
+ 1 file changed, 1 insertion(+)
+
+Admin@DESKTOP-I71M5RM MINGW64 ~/cherry-pick (dev)
+$ git log --oneline
+7803608 (HEAD -> dev) Second commit
+05ac82a (master) First commit
+
+Admin@DESKTOP-I71M5RM MINGW64 ~/cherry-pick (dev)
+$ git checkout master
+Switched to branch 'master'
+
+Admin@DESKTOP-I71M5RM MINGW64 ~/cherry-pick (master)
+$ git log --oneline
+05ac82a (HEAD -> master) First commit
+
+Admin@DESKTOP-I71M5RM MINGW64 ~/cherry-pick (master)
+$ git cherry-pick 7803608
+[master 0ac5f23] Second commit
+ Date: Thu May 27 12:33:17 2021 +0530
+ 1 file changed, 1 insertion(+)
+
+Admin@DESKTOP-I71M5RM MINGW64 ~/cherry-pick (master)
+$ git log --oneline
+0ac5f23 (HEAD -> master) Second commit
+05ac82a First commit
